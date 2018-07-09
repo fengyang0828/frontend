@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TagsInput and TypeAhead TOGETHER!</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="css/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/selectbox.css">
+</head>
+<body>
+<div id="div_nav">
+    <div>
+        <a href="/" id="logolink"><img src="images/sv_logo.jpg" alt="ScienceVie Tools Logo" id="logoimg"></a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 column">
+            <div class="page-header">
+                <h2>
+                    Score Data Pulling
+                </h2>
+                <p class="text-muted"></p>
+            </div>
+        </div>
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <h4>
+                        Choose the DataSet
+                    </h4>
+                    <div class="row clearfix">
+                        <br>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-6 column" text-center>
+                            <div class="col-md-4 column" text-center>Index Type:</div>
+                            <div class="col-md-8 column">
+                                <select id="indextype_selectpicker" class="selectpicker" label>
+                                    <option value="1">test1</option>
+                                    <option value="2">test2</option>
+                                    <option value="3">test3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 column" text-center>
+                            <div class="col-md-4 column" text-center>
+                                Version Date:
+                            </div>
+                            <div class="col-md-8 column">
+                                <form id="form" name="form" class="form-inline">
+                                    <div class="form-group">
+                                        <label for="startDate"></label>
+                                        <input id="startDate" name="startDate" type="text" class="form-control" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <br>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-6 column" text-center>
+                            <div class="col-md-4 column" text-center>
+                                Add columns:
+                            </div>
+                            <div class="col-md-8 column" text-center>
+                                <select id="score_selectpicker" class="selectpicker" data-live-search="true" data-live-search-style="startsWith" multiple>
+                                    <option value="1">test1xxxxxxxxx</option>
+                                    <option value="2">test2xxxxxxxxx</option>
+                                    <option value="3">test3xxxxxxxxx</option>
+                                    <option value="4">test4xxxxxxxxx</option>
+                                    <option value="5">test5</option>
+                                    <option value="6">test6</option>
+                                    <option value="7">test7</option>
+                                    <option value="8">test8</option>
+                                    <option value="9">test9</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 column" text-center>
+                            <div class="col-md-4 column" text-center>
+                                Selected columns:
+                            </div>
+                            <div class="col-md-8 column" text-center>
+                                <input type="text" id="scoreNameSearch" placeholder=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <br>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-6 column" text-center>
+                            <div class="col-md-6 column" text-center>
+                                <button class="btn btn-primary btn-round" id="bookmarkbutton">
+                                    Choose from BookMark
+                                </button>
+                            </div>
+                            <div class="col-md-6 column" text-center>
+                                <button class="btn btn-primary btn-round" id="savebutton">
+                                    Save from Tags
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 column" id="bookmarkdiv" hidden>
+            <h4>
+                BookMark
+            </h4>
+            <p class="text-muted">
+            </p>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Detail</th>
+                    <th class="text-right">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td>Andrew Mike</td>
+                    <td>test1xxxx</td>
+                    <td class="td-actions text-right">
+                        <button type="button" rel="tooltip" class="btn btn-info">
+                            <i class="material-icons">delete</i>
+                        </button>
+                        <button type="button" rel="tooltip" class="btn btn-success">
+                            <i class="material-icons">select</i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">2</td>
+                    <td>John Doe</td>
+                    <td>test1xxxx</td>
+                    <td class="td-actions text-right">
+                        <button type="button" rel="tooltip" class="btn btn-info btn-round">
+                            <i class="material-icons">delete</i>
+                        </button>
+                        <button type="button" rel="tooltip" class="btn btn-success btn-round">
+                            <i class="material-icons">select</i>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Whats your favorite fruit</h3>
+        <input id="ms1" style="width:400px;" type="text" name="ms1"/>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/selectbox.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/js/bootstrap-select.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-tagsinput.js"></script>
+<script type="text/javascript" src="js/bootstrap3-typeahead.js"></script>
+<script type="text/javascript" src="js/score.js"></script>
+<!--<script type="text/javascript" src="js/material-kit.js"></script>-->
+</body>
+</html>
+
